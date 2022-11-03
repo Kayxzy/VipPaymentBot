@@ -1,0 +1,33 @@
+{
+    "name": " Payment Vip",
+    "description": "payment vip bot",
+    "logo": "",
+    "keywords": [
+      "python3",
+      "pyrogram"
+    ],
+    "stack": "heroku-22",
+    "env": {
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "3487995",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "7b9f1868c1e90b7408d48445f1e89603",
+        "required": true
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ],
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    }
+  }  
