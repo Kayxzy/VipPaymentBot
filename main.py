@@ -37,7 +37,7 @@ button_a1 = InlineKeyboardMarkup(
                 callback_data="price_list",
             ),
             InlineKeyboardButton(
-                text="🆘 Dukungan", url="https://t.me/+i-KmRABwFzk5N2I1"
+                text="🆘 Testimoni", url="https://t.me/+i-KmRABwFzk5N2I1"
             ),
         ],
     ]
@@ -66,7 +66,7 @@ button_b1 = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Back",
+                text="Kembali",
                 callback_data="home_intro",
             ),
         ],
@@ -143,9 +143,8 @@ async def d_purchase(_, cq: CallbackQuery):
 • OVO
 • Gopay
 • DANA
-• LinkAja
+• Shopee Pay
 • M-BANKING
-• QRIS
 
 • <b>Cara Pembayaran</b>
 1. Click tombol Order di bawah.
@@ -165,9 +164,28 @@ Bukti Transfer & Nama Pengirim: "Screenshot"
 @bot.on_callback_query(filters.regex("^price_list$"))
 async def d_price(_, cq: CallbackQuery):
     await cq.answer("berikut daftar harga yang tersedia")
-    await cq.edit_message_text(
-        "coming-soon !\n\nbot is still under development, price list are coming very soon.",
-        reply_markup=button_b1,
+    pricelist = """
+🗒 <u>LIST HARGA <b>VIP / VVIP</b> RAINBOW</u>
+
+🔥<u>PROMO VIP CAMPURAN 2000+MEDIA HANYA 40K</u>
+
+🔥<u>PROMO JOIN 70K DAPET PAKET 1 GRUP VVIP BOKEP</u>
+• VVIP INDO
+• VVIP HIJAB
+• VVIP BOCIL
+• VVIP ASIAN 
+• VVIP JAV
+• VVIP ONLY FANS 
+• VVIP BARAT
+• VVIP LIVE
+
+🔰 <u>KEUNTUNGAN JOIN:</u>
+• BERISI RIBUAN VIDEO 
+• NONTON VIDEO TANPA LINK
+• SEKALI BAYAR PERMANENT
+• UPDATE SETIAP HARI
+    """
+    await cq.edit_message_text(pricelist, reply_markup=button_b1)
     )
 
 
