@@ -165,7 +165,7 @@ Bukti Transfer & Nama Pengirim: "Screenshot"
 async def d_price(_, cq: CallbackQuery):
     await cq.answer("berikut daftar harga yang tersedia")
     pricelist = """
-🗒 <u>LIST HARGA <b>VIP / VVIP</b> RAINBOW</u>
+🗒 <u>DAFTAR HARGA <b>VIP / VVIP</b> RAINBOW</u>
 
 🔥<u>PROMO VIP CAMPURAN 2000+MEDIA HANYA 40K</u>
 
@@ -186,7 +186,6 @@ async def d_price(_, cq: CallbackQuery):
 • UPDATE SETIAP HARI
     """
     await cq.edit_message_text(pricelist, reply_markup=button_b1)
-    )
 
 
 @bot.on_callback_query(filters.regex("^terms_conditions$"))
