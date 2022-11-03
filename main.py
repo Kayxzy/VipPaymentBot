@@ -73,6 +73,20 @@ button_b1 = InlineKeyboardMarkup(
     ]
 )
 
+button_k1 = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(text="🛒 Order", url="https://t.me/ubotprem"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="❌ Batalkan",
+                callback_data="home_intro",
+            ),
+        ],
+    ]
+)
+
 
 @bot.on_message(filters.command("start") & filters.private)
 @bot.on_callback_query(filters.regex("^home_intro$"))
@@ -97,6 +111,7 @@ Dengan bot ini, anda dapat melakukan pembayaran untuk userbot premium Tede-Userb
         """
         button = button_a1
     elif update.from_user.id not in []:
+        #       text = "Kamu Adalah Pengguna Premium dan tidak membuat userbot premium, status premium akan berakhir pada 0 sep 1999.\n\nSilahkan buat userbot kamu supaya status premium kamu tidak terbuang sia sia."
         text = "lo dah premium tapi lo belum bikin userbot premium kamu akan abis pada senin 0 sep 1999"
         button = None
     else:
@@ -125,10 +140,30 @@ Dengan bot ini, anda dapat melakukan pembayaran untuk userbot premium Tede-Userb
 @bot.on_callback_query(filters.regex("^in_purchase$"))
 async def d_purchase(_, cq: CallbackQuery):
     await cq.answer("lakukan pembayaran melalui platform yang tersedia")
-    await cq.edit_message_text(
-        "coming-soon !\n\nbot is still under development, payment method are coming very soon.",
-        reply_markup=button_b1,
-    )
+    inpurchase = """
+• <u>Untuk Melanjutkan Transaksi langsung melakukan pembayaran ke <b>Admin TedeUbot yang tersedia di tombol Order</b></u>
+
+• <b>Metode Pembayaran</b>
+• OVO
+• Gopay
+• DANA
+• LinkAja
+• M-BANKING
+• QRIS
+
+• <b>Cara Pembayaran</b>
+1. Click tombol Order di bawah.
+2. Pilih Admin TedeUbot.
+3. Ketik Bayar TedeUbot.
+4. Kirim pembayaran sesuai metode pembayaran yang admin sediakan.
+5. Setelah melakukan transfer pembayaran, customer wajib mengirim bukti pembayaran sesuai format di bawah ini.
+
+<code>Id Akun Kustomer Tede Ubot:
+Total Pembayaran:
+Bukti Transfer & Nama Pengirim: "Screenshot"
+</code>
+    """
+    await cq.edit_message_text(inpurchase, reply_markup=button_k1)
 
 
 @bot.on_callback_query(filters.regex("^price_list$"))
