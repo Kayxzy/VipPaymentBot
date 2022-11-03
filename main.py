@@ -10,9 +10,9 @@ from pyrogram.types import (
     Message,
 )
 
-API_ID = "3487995"
-API_HASH = "7b9f1868c1e90b7408d48445f1e89603"
-BOT_TOKEN = "5459903932:AAG4HFZtrQuEWLHvVGaAR9FlJce5FzlzcZM"
+API_ID = "20810942"
+API_HASH = "00c3cdb1b35bb707f9878d26685dba5b"
+BOT_TOKEN = "5436640493:AAFo4Rw4jJeYxxtTTS0T_qleQh8bkSPjMOE"
 
 bot = Client(
     name="bot",
@@ -27,7 +27,7 @@ button_a1 = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="💸 Buat pembayaran",
+                text="💸 Pembayaran",
                 callback_data="terms_conditions",
             )
         ],
@@ -37,7 +37,7 @@ button_a1 = InlineKeyboardMarkup(
                 callback_data="price_list",
             ),
             InlineKeyboardButton(
-                text="🆘 Dukungan", url="https://t.me/tedeubot_support_bot"
+                text="🆘 Dukungan", url="https://t.me/+i-KmRABwFzk5N2I1"
             ),
         ],
     ]
@@ -76,7 +76,7 @@ button_b1 = InlineKeyboardMarkup(
 button_k1 = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="🛒 Order", url="https://t.me/ubotprem"),
+            InlineKeyboardButton(text="🛒 Order", url="https://t.me/BacodTele"),
         ],
         [
             InlineKeyboardButton(
@@ -105,14 +105,14 @@ async def intro_msg(_, update: Message | CallbackQuery):
         text = f"""
 👋🏻 Halo {update.from_user.first_name}!
 
-Dengan bot ini, anda dapat melakukan pembayaran untuk userbot premium Tede-Userbot.
+Dengan bot ini, anda dapat melakukan pembayaran untuk VIP RAINBOW.
 
 💭 Berikut dibawah ini opsi yang berisi petunjuk untuk melakukan pembayaran!
         """
         button = button_a1
     elif update.from_user.id not in []:
-        #       text = "Kamu Adalah Pengguna Premium dan tidak membuat userbot premium, status premium akan berakhir pada 0 sep 1999.\n\nSilahkan buat userbot kamu supaya status premium kamu tidak terbuang sia sia."
-        text = "lo dah premium tapi lo belum bikin userbot premium kamu akan abis pada senin 0 sep 1999"
+        #       text = "BELUM JOIN KALO MAU JOIN YA KE https://t.me/+i-KmRABwFzk5N2I1"
+        text = "JOIN VIP / VVIP MURAH HANYA DI https://t.me/+i-KmRABwFzk5N2I1"
         button = None
     else:
         text = f"Hey {update.from_user.first_name}. Please browse through the options"
@@ -120,12 +120,8 @@ Dengan bot ini, anda dapat melakukan pembayaran untuk userbot premium Tede-Userb
             [
                 [
                     InlineKeyboardButton(
-                        "help",
+                        "Bantuan",
                         callback_data="help_back",
-                    ),
-                    InlineKeyboardButton(
-                        "restart bot",
-                        callback_data=f"restartTedeUb_{update.from_user.id}",
                     ),
                 ]
             ]
@@ -141,7 +137,7 @@ Dengan bot ini, anda dapat melakukan pembayaran untuk userbot premium Tede-Userb
 async def d_purchase(_, cq: CallbackQuery):
     await cq.answer("lakukan pembayaran melalui platform yang tersedia")
     inpurchase = """
-• <u>Untuk Melanjutkan Transaksi langsung melakukan pembayaran ke <b>Admin TedeUbot yang tersedia di tombol Order</b></u>
+• <u>Untuk Melanjutkan Transaksi langsung melakukan pembayaran ke <b>Admin Vip yang tersedia di tombol Order</b></u>
 
 • <b>Metode Pembayaran</b>
 • OVO
@@ -153,12 +149,12 @@ async def d_purchase(_, cq: CallbackQuery):
 
 • <b>Cara Pembayaran</b>
 1. Click tombol Order di bawah.
-2. Pilih Admin TedeUbot.
-3. Ketik Bayar TedeUbot.
+2. Pilih Admin Vip.
+3. Ketik Bayar Vip.
 4. Kirim pembayaran sesuai metode pembayaran yang admin sediakan.
 5. Setelah melakukan transfer pembayaran, customer wajib mengirim bukti pembayaran sesuai format di bawah ini.
 
-<code>Id Akun Kustomer Tede Ubot:
+<code>VIP / VVIP:
 Total Pembayaran:
 Bukti Transfer & Nama Pengirim: "Screenshot"
 </code>
@@ -179,23 +175,16 @@ async def d_price(_, cq: CallbackQuery):
 async def d_provision(_, cq: CallbackQuery):
     await cq.answer("syarat dan ketentuan pembayaran")
     tecom = """
-🧸 <u><b>TedeUserbot premium</b></u>
+🧸 <u><b>GRUP VIP / VVIP</b></u>
 
 ↪️ <b>Kebijakan pengembalian</b>
-Setelah melakukan pembayaran, dan jika anda belum mendapatkan produk dari pesanan yang anda buat,
-anda akan memiliki <b>2 hari</b> untuk menggunakan <b>hak penggantian/pengembalian</b>, kegagalan transaksi/malfungsi
-produk kemungkinan akan mengaktifkan layanan yang diminta.
-
-<i>Oleh karena itu, jika anda sudah menggunakan produk yang anda pesan dan tidak terdapat cacat dalam produk tersebut
-(termasuk akses penuh dalam pamakaian nya), anda akan kehilangan hak atas pengembalian uang</i>
-
-🔐 <b>Kebijakan privasi</b>
-Anda dapat berkonsultasi dengan Kebijakan Privasi kami dengan mengklik <a href=\"https://\">di sini</a>.
+Setelah melakukan pembayaran, dan jika anda belum mendapatkan respon dari pesanan yang anda buat,
+anda akan memiliki <b>1 hari</b> untuk menggunakan <b>hak penggantian/pengembalian</b>, kegagalan transaksi
+kemungkinan akan mengaktifkan layanan yang diminta.
 
 🆘 <b>Dukungan</b>
 Untuk menerima dukungan, anda dapat:
-• Hubungi @tofik_dn di Telegram
-• Hubungi tim kami di @tedeubot_support_bot
+• Hubungi @BacodTele di Telegram
 ⚠️ <b>JANGAN hubungi</b> Dukungan Telegram atau Dukungan Bot Telegram perihal pembayaran yang anda buat di bot ini.
 
 👉🏻 Tekan <b>tombol hijau</b> untuk menyatakan bahwa anda telah <b>membaca dan menerima ketentuan</b> ini dan untuk melanjutkan pembayaran,
