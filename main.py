@@ -10,9 +10,9 @@ from pyrogram.types import (
     Message,
 )
 
-API_ID = "20810942"
-API_HASH = "00c3cdb1b35bb707f9878d26685dba5b"
-BOT_TOKEN = "5436640493:AAFo4Rw4jJeYxxtTTS0T_qleQh8bkSPjMOE"
+API_ID = "17131033"
+API_HASH = "7768488c115ac09684bb38e608c47997"
+BOT_TOKEN = "8150264707:AAHjeNNF3PHeql98L_yM0v71zDujiJmCZvY"
 
 bot = Client(
     name="bot",
@@ -33,7 +33,7 @@ button_a1 = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text="🗒 Daftar harga",
+                text="🗒 Prediksi",
                 callback_data="price_list",
             ),
             InlineKeyboardButton(
@@ -105,14 +105,15 @@ async def intro_msg(_, update: Message | CallbackQuery):
         text = f"""
 👋🏻 Halo {update.from_user.first_name}!
 
-Dengan bot ini, anda dapat melakukan pembayaran untuk VIP RAINBOW.
+Selamat Datang Di Bot Prediksi Spaceman 🚀🚀 
 
-💭 Berikut dibawah ini opsi yang berisi petunjuk untuk melakukan pembayaran!
+🔴 Hati Hati Banyak Bot Palsu Yang Meniru @SPACEMANPREDIKSIBYLANGBOT
+💭 Berikut dibawah ini opsi yang berisi petunjuk untuk menggunakan bot!
         """
         button = button_a1
     elif update.from_user.id not in []:
         #       text = "BELUM JOIN KALO MAU JOIN YA KE https://t.me/+i-KmRABwFzk5N2I1"
-        text = "JOIN VIP / VVIP MURAH HANYA DI https://t.me/+i-KmRABwFzk5N2I1"
+        text = "GRUP PREDIKSI HANYA DI https://t.me/+n96_Y5vc_aY2MzFl"
         button = None
     else:
         text = f"Hey {update.from_user.first_name}. Please browse through the options"
@@ -165,25 +166,64 @@ Bukti Transfer & Nama Pengirim: "Screenshot"
 async def d_price(_, cq: CallbackQuery):
     await cq.answer("berikut daftar harga yang tersedia")
     pricelist = """
-🗒 <u>DAFTAR HARGA <b>VIP / VVIP</b> RAINBOW</u>
+PREDIKSI BOT SPACEMAN 🚀
 
-🔥<u>PROMO VIP CAMPURAN 2000+MEDIA HANYA 40K</u>
+PREDIKSI HARI INI : 👇
+15:00 = min x9/=====>  up
+15:05 = min x3/=====>  up
+15:06 = min x2/=====>  up
+15:12 = min x1/=====>  up
+15:14 = min x1/=====>  up
+15:18 = min x3/=====>  up
+15:23 = min x1/=====>  up
+15:27 = min x2/=====>  up
+15:31 = min x28/====>  up
+15:34 = min x2/=====>  up
+15:38 = min x1/=====>  up
+15:42 = min x1/=====>  up
+15:45 = min x5/=====>  up
+15:50 = min x1/=====>  up
+15:57 = min x2/=====>  up
+16:01 = min x1/=====>  up
+16:08 = min x1/=====>  up
+16:14 = min x9/=====>  up
+16:16 = min x2/=====>  up
+16:26 = min x1/=====>  up
+16:28 = min x1/=====>  up
+16:32 = min x3/=====>  up
+16:39 = min x8/=====>  up
+16:45 = min x3/=====>  up
+16:49 = min x21/====>  up
+16:56 = min x1/=====>  up
+16:58 = min x1/=====>  up
+17:01 = min x1/=====>  up
+17:05 = min x4/=====>  up 
+17:12 = min x1/=====>  up
+17:16 = min x2/=====>  up
+17:21 = min x1/=====>  up
+17:26 = min x2/=====>  up
+17:28 = min x42/====>  up
+17:32 = min x1/=====>  up
+17:35 = min x2/=====>  up
+17:41 = min x1/=====>  up
+17:45 = min x2/=====>  up
+17:47 = min x3/=====>  up 
+17:51 = min x1/=====>  up
+17:53 = min x2/=====>  up
+17:57 = min x1/=====>  up
+17:59 = min x9/=====>  up
 
-🔥<u>PROMO JOIN 70K DAPET PAKET 1 GRUP VVIP BOKEP</u>
-• VVIP INDO
-• VVIP HIJAB
-• VVIP BOCIL
-• VVIP ASIAN 
-• VVIP JAV
-• VVIP ONLY FANS 
-• VVIP BARAT
-• VVIP LIVE
 
-🔰 <u>KEUNTUNGAN JOIN:</u>
-• BERISI RIBUAN VIDEO 
-• NONTON VIDEO TANPA LINK
-• SEKALI BAYAR PERMANENT
-• UPDATE SETIAP HARI
+NOTE : Tidak ada jaminan 100% akurat !!!
+
+LINK MAIN DI: 👇
+https://suara89.info/biqz
+
+jangan paksakan pola apabila tebakan kurang tepat feeling lebih di utamakan dalam spaceman
+
+main di link yang gua kirim dan mengacu zona waktu WIB yang lain bisa mengikuti
+
+JANGAN GEGEBAH FULL AMBIL KALI GEDE , SEKIRA NYA UDAH CUKUP LANGSUNG CAIRIN JANGAN SAMPE LO NYESEL KALO DIA TIBA TIBA NABRAK !!
     """
     await cq.edit_message_text(pricelist, reply_markup=button_b1)
 
